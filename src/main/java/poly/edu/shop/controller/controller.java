@@ -9,4 +9,9 @@ public class controller {
     public String qmk(){
         return "quenmatkhau";
     }
+    
+        @RequestMapping("trangchu")
+        public String trangchu(){
+            return "trangchuadmin";
+        }
 }
