@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Example</title>
+  <link rel="stylesheet" href="acccount.css"> <!-- Liên kết với file CSS -->
+</head>
+<body>
+
+    <h1>acccount</h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Table')">List</button>
+        <button class="tablinks" onclick="openTab(event, 'Edition')">Edition</button>
+        
+      </div>
+<div class="table-container">
+    
+    
+      <div id="Table" class="tabcontent">  
+    <table>
+    <thead class="sticky-thead">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Photo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+        <tr>
+            <td>namnv</td>
+            <td>nam123</td>
+            <td>nguyen van nam</td>
+            <td>namnv@gmail.com</td>
+            <td>1.img</td>
+        </tr>
+    </tbody>
+    
+</table>
+<h2>
+    <button id="firstButton" class="button button1" onclick="goToFirst()">First</button>
+    <button id="previousButton" class="button button2" onclick="goToPrevious()">Previous</button>
+    <span id="currentPage">1</span>
+    <button id="nextButton" class="button button4" onclick="goToNext()">Next</button>
+    <button id="lastButton" class="button button5" onclick="goToLast()">Last</button>
+    </h2>
+</div>
+
+<div id="Edition" class="tabcontent">  
+    <link rel="stylesheet" href="http://127.0.0.1:5500/edition.html">
+</div>
+
+
+<script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");   
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+
+
+
+    <script>
+    var currentPage = 1;
+    var rowsPerPage = 6; // Số hàng muốn hiển thị trong mỗi trang
+
+    function showRows() {
+        var table = document.getElementById("Table");
+        var rows = table.getElementsByTagName("tr");
+
+        // Ở đây, chúng ta sẽ hiển thị các hàng tương ứng với trang hiện tại
+        var startIndex = (currentPage - 1) * rowsPerPage;
+        var endIndex = startIndex + rowsPerPage;
+
+        for (var i = 0; i < rows.length; i++) {
+            if (i >= startIndex && i < endIndex) {
+                rows[i].style.display = "table-row";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+        function showRows() {
+    // ... phần code hiển thị hàng
+    var table = document.getElementById("Table");
+    var rows = table.getElementsByTagName("tr");
+
+    // Ở đây, chúng ta sẽ hiển thị các hàng tương ứng với trang hiện tại
+    var startIndex = (currentPage - 1) * rowsPerPage;
+    var endIndex = startIndex + rowsPerPage;
+
+    for (var i = 0; i < rows.length; i++) {
+        if (i >= startIndex && i < endIndex) {
+            rows[i].style.display = "table-row";
+        } else {
+            rows[i].style.display = "none";
+        }
+    }
+
+    // Hiển thị số trang hiện tại
+    document.getElementById("currentPage").innerText = "Page " + currentPage;
+}
+
+window.onload = function() {
+    showRows();
+    window.onscroll = function() {
+        showRows();
+    };
+};
+
+    }
+
+    function goToFirst() {
+        currentPage = 1;
+        showRows();
+    }
+
+    function goToLast() {
+        var table = document.getElementById("Table");
+        var rowCount = table.getElementsByTagName("tr").length - 1; // Loại bỏ hàng header
+
+        currentPage = Math.ceil(rowCount / rowsPerPage);
+        showRows();
+    }
+
+    function goToPrevious() {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows();
+        }
+    }
+
+    function goToNext() {
+        var table = document.getElementById("Table");
+        var rowCount = table.getElementsByTagName("tr").length - 1; // Loại bỏ hàng header
+
+        var maxPage = Math.ceil(rowCount / rowsPerPage);
+        if (currentPage < maxPage) {
+            currentPage++;
+            showRows();
+        }
+    }
+
+    window.onload = function () {
+        showRows();
+    };
+</script>
+
+
+
+</script>
+</body>
+</html>
