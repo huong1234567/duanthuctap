@@ -21,10 +21,10 @@
                             <p class="mb-2"> Vui lòng nhập email hoặc số điện thại di động để tìm kiếm tài khoản của bạn
                             </p>
                         </div>
-                        <form action="/forgot-password" method="post">
+                        <form>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input id="email" class="form-control" name="email"
+                                <input type="email" id="email" class="form-control" name="email"
                                     placeholder="Email hoặc số điện thoại" required="">
                             </div>
                             <div class="mb-3 ">
@@ -43,24 +43,5 @@
         </div>
     </div>
 </body>
-<script th:inline="javascript">
-    /*<![CDATA[*/
-    var message = /*[[${message}]]*/ null;
-    var imageUrl = /*[[${imageUrl}]]*/ null;
-    var redirectBack = /*[[${redirectBack}]]*/ false;
-
-    // Kiểm tra xem message có giá trị hay không
-    if (message !== null) {
-        alert(message);
-
-        // Nếu tìm thấy tài khoản và không cần quay lại trang nhập email, chuyển hướng đến trang "result"
-
-    } else {
-        // Nếu không tìm thấy tài khoản hoặc cần quay lại trang nhập email, chuyển hướng đến trang nhập email
-        alert("Email không tồn tại trong hệ thống.");
-
-    }
-    /*]]>*/
-</script>
 
 </html>
